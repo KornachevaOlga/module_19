@@ -1,0 +1,23 @@
+{% extends 'task2/menu.html' %}
+
+{% block title %}Магазин{% endblock %}
+{% block pagename %}Магазин{% endblock %}
+
+{% block content %}
+    <h1>Игры</h1>
+    <ul>
+        {% for key, value in game_dict.items %}
+            {% for i in value %}
+                <p>{{ i }}<button>Купить</button> </p>
+            {% endfor %}
+        {% endfor %}
+        <li>
+                {{ game.title }} | {{ game.description }}. Стоимость: {{ game.cost }}
+                <button>Купить</button>
+        </li>
+    </ul>
+
+
+
+    <a href=''><button>Вернуться обратно</button></a>
+{% endblock %}
