@@ -18,10 +18,10 @@ from django.contrib import admin
 from django.urls import path
 from task1.views import *
 from tempfile import template
+from task1.models import *
 
 
-
-
+blog_page = BlogPage()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,8 +33,8 @@ urlpatterns = [
     path('', game_platform),
     path('games/', game),
     path('cart/', cart),
-
+    # path('platform', game_platform),
     path("registration_page/", sign_up),
-
+    path('news/', blog_page.get_page)
 
 ]

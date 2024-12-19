@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-<html>
+{%load static%}
+<html lang="en">
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'style.css'%}">
 </head>
 <body>
-    <header>
-        <h1>{% block pagename %}{% endblock %}</h1>
-    </header>
-    <nav>
-        {% block menu %}
-            <h2><a href="/">Главная</a></h2>
-            <h2><a href="http://127.0.0.1:8000/games/">Магазин</a></h2>
-            <h2><a href="http://127.0.0.1:8000/cart/">Корзина</a></h2>
+<pagename>
+    {%block pagename%}
+    <h2>Главная страница</h2>
+    {%endblock%}
+</pagename>
 
-        {% endblock %}
-    </nav>
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+<menu>
+    {%block menu%}
+
+    <form action="http://127.0.0.1:8000" target="_self"><button class="btn">Главная</button><button class="btn">Страница1</button></form>
+    <form action="http://127.0.0.1:8000/games/" target="_self"><button class="btn">Магазин</button><button class="btn">Страница2</button></form></form>
+
+    <form action="http://127.0.0.1:8000/cart/" target="_self"><button class="btn">Корзина</button><button class="btn">Страница3</button></form>
+    <form action="http://127.0.0.1:8000/registration_page/" target="_self"><button class="btn">Регистрация</button><button class="btn">Страница4</button></form>
+    <form action="http://127.0.0.1:8000/news" target="_self"><button class="btn">Страницы</button></form>
+    {%endblock%}
+</menu>
+
+<content>
+    {%block content%}
+    {%endblock%}
+</content>
 </body>
 </html>

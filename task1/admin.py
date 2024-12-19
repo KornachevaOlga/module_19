@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Buyer, Game
+from .models import *
 
 # Register your models here.
 class BuyerAdmin(admin.ModelAdmin):
@@ -17,7 +17,7 @@ class BuyerAdmin(admin.ModelAdmin):
 
 
 # Регистрация модели Buyer с админ-классом BuyerAdmin
-admin.site.register(Game, BuyerAdmin)
+admin.site.register(Buyer)
 
 
 class GameAdmin(admin.ModelAdmin):
@@ -38,6 +38,6 @@ class GameAdmin(admin.ModelAdmin):
 
 
 # Регистрация модели Game с админ-классом GameAdmin
-admin.site.register(Game, GameAdmin)
+admin.site.register(Game)
 
-
+# admin.site.register(News)
