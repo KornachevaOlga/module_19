@@ -30,3 +30,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class post2(models.Model):
+    title = models.CharField(max_length=70)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
